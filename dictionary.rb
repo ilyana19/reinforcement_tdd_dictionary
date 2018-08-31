@@ -6,11 +6,13 @@ class Dictionary
   end
 
   def add(entry)
-    if entry.is_a?(Hash)
-      @entries.merge!(entry)
-    else
-      @entries.merge!({entry => nil})
-    end
+    # if entry.is_a?(Hash)
+    #   @entries.merge!(entry)
+    # else
+    #   @entries.merge!({entry => nil})
+    # end
+
+    entry.is_a?(Hash) ? @entries.merge!(entry) : @entries.merge!({entry => nil})
   end
 
   def keywords
